@@ -1,478 +1,187 @@
-{
-  "kind": "Event",
-  "apiVersion": "audit.k8s.io/v1",
-  "level": "RequestResponse",
-  "auditID": "ed9c06a5-f9f0-4216-8eca-e644cb8cfad1",
-  "stage": "RequestReceived",
-  "requestURI": "/api/v1/namespaces/kube-system/secrets?limit=500",
-  "verb": "list",
-  "user": {
-    "username": "minikube-user",
-    "groups": [
-      "system:masters",
-      "system:authenticated"
-    ],
-    "extra": {
-      "authentication.kubernetes.io/credential-id": [
-        "X509SHA256=608ebc64f580b213fea54740cf5733d8aeafe6feafd14e5ee8a6540c1cf2a581"
-      ]
-    }
-  },
-  "sourceIPs": [
-    "192.168.52.1"
-  ],
-  "userAgent": "kubectl.exe/v1.32.2 (windows/amd64) kubernetes/67a30c0",
-  "objectRef": {
-    "resource": "secrets",
-    "namespace": "kube-system",
-    "apiVersion": "v1"
-  },
-  "requestReceivedTimestamp": "2025-12-13T11:27:36.451950Z",
-  "stageTimestamp": "2025-12-13T11:27:36.451950Z"
-}
-{
-  "kind": "Event",
-  "apiVersion": "audit.k8s.io/v1",
-  "level": "RequestResponse",
-  "auditID": "ed9c06a5-f9f0-4216-8eca-e644cb8cfad1",
-  "stage": "ResponseComplete",
-  "requestURI": "/api/v1/namespaces/kube-system/secrets?limit=500",
-  "verb": "list",
-  "user": {
-    "username": "minikube-user",
-    "groups": [
-      "system:masters",
-      "system:authenticated"
-    ],
-    "extra": {
-      "authentication.kubernetes.io/credential-id": [
-        "X509SHA256=608ebc64f580b213fea54740cf5733d8aeafe6feafd14e5ee8a6540c1cf2a581"
-      ]
-    }
-  },
-  "sourceIPs": [
-    "192.168.52.1"
-  ],
-  "userAgent": "kubectl.exe/v1.32.2 (windows/amd64) kubernetes/67a30c0",
-  "objectRef": {
-    "resource": "secrets",
-    "namespace": "kube-system",
-    "apiVersion": "v1"
-  },
-  "responseStatus": {
-    "metadata": {},
-    "code": 200
-  },
-  "responseObject": {
-    "kind": "Table",
-    "apiVersion": "meta.k8s.io/v1",
-    "metadata": {
-      "resourceVersion": "446"
-    },
-    "columnDefinitions": [
-      {
-        "name": "Name",
-        "type": "string",
-        "format": "name",
-        "description": "Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names",
-        "priority": 0
-      },
-      {
-        "name": "Type",
-        "type": "string",
-        "format": "",
-        "description": "Used to facilitate programmatic handling of secret data. More info: https://kubernetes.io/docs/concepts/configuration/secret/#secret-types",
-        "priority": 0
-      },
-      {
-        "name": "Data",
-        "type": "string",
-        "format": "",
-        "description": "Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here. Described in https://tools.ietf.org/html/rfc4648#section-4",
-        "priority": 0
-      },
-      {
-        "name": "Age",
-        "type": "string",
-        "format": "",
-        "description": "CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata",
-        "priority": 0
-      }
-    ],
-    "rows": [
-      {
-        "cells": [
-          "bootstrap-token-zhg390",
-          "bootstrap.kubernetes.io/token",
-          6,
-          "34s"
-        ],
-        "object": {
-          "kind": "PartialObjectMetadata",
-          "apiVersion": "meta.k8s.io/v1",
-          "metadata": {
-            "name": "bootstrap-token-zhg390",
-            "namespace": "kube-system",
-            "uid": "7fc1e3eb-082d-47b3-8dbf-c02ae512b940",
-            "resourceVersion": "254",
-            "creationTimestamp": "2025-12-13T11:27:02Z",
-            "managedFields": [
-              {
-                "manager": "kubeadm",
-                "operation": "Update",
-                "apiVersion": "v1",
-                "time": "2025-12-13T11:27:02Z",
-                "fieldsType": "FieldsV1",
-                "fieldsV1": {
-                  "f:data": {
-                    ".": {},
-                    "f:auth-extra-groups": {},
-                    "f:expiration": {},
-                    "f:token-id": {},
-                    "f:token-secret": {},
-                    "f:usage-bootstrap-authentication": {},
-                    "f:usage-bootstrap-signing": {}
-                  },
-                  "f:type": {}
-                }
-              }
-            ]
-          }
-        }
-      }
-    ]
-  },
-  "requestReceivedTimestamp": "2025-12-13T11:27:36.451950Z",
-  "stageTimestamp": "2025-12-13T11:27:36.453412Z",
-  "annotations": {
-    "authorization.k8s.io/decision": "allow",
-    "authorization.k8s.io/reason": ""
-  }
-}
-{
-  "kind": "Event",
-  "apiVersion": "audit.k8s.io/v1",
-  "level": "RequestResponse",
-  "auditID": "149f9183-51de-4096-bfc8-80e16773ce90",
-  "stage": "RequestReceived",
-  "requestURI": "/api/v1/namespaces/kube-system/secrets?limit=500",
-  "verb": "list",
-  "user": {
-    "username": "minikube-user",
-    "groups": [
-      "system:masters",
-      "system:authenticated"
-    ],
-    "extra": {
-      "authentication.kubernetes.io/credential-id": [
-        "X509SHA256=608ebc64f580b213fea54740cf5733d8aeafe6feafd14e5ee8a6540c1cf2a581"
-      ]
-    }
-  },
-  "sourceIPs": [
-    "192.168.52.1"
-  ],
-  "userAgent": "kubectl.exe/v1.32.2 (windows/amd64) kubernetes/67a30c0",
-  "objectRef": {
-    "resource": "secrets",
-    "namespace": "kube-system",
-    "apiVersion": "v1"
-  },
-  "requestReceivedTimestamp": "2025-12-13T11:27:36.930794Z",
-  "stageTimestamp": "2025-12-13T11:27:36.930794Z"
-}
-{
-  "kind": "Event",
-  "apiVersion": "audit.k8s.io/v1",
-  "level": "RequestResponse",
-  "auditID": "149f9183-51de-4096-bfc8-80e16773ce90",
-  "stage": "ResponseComplete",
-  "requestURI": "/api/v1/namespaces/kube-system/secrets?limit=500",
-  "verb": "list",
-  "user": {
-    "username": "minikube-user",
-    "groups": [
-      "system:masters",
-      "system:authenticated"
-    ],
-    "extra": {
-      "authentication.kubernetes.io/credential-id": [
-        "X509SHA256=608ebc64f580b213fea54740cf5733d8aeafe6feafd14e5ee8a6540c1cf2a581"
-      ]
-    }
-  },
-  "impersonatedUser": {
-    "username": "system:serviceaccount:secure-ops:monitoring",
-    "groups": [
-      "system:serviceaccounts",
-      "system:serviceaccounts:secure-ops",
-      "system:authenticated"
-    ]
-  },
-  "sourceIPs": [
-    "192.168.52.1"
-  ],
-  "userAgent": "kubectl.exe/v1.32.2 (windows/amd64) kubernetes/67a30c0",
-  "objectRef": {
-    "resource": "secrets",
-    "namespace": "kube-system",
-    "apiVersion": "v1"
-  },
-  "responseStatus": {
-    "metadata": {},
-    "status": "Failure",
-    "message": "secrets is forbidden: User \"system:serviceaccount:secure-ops:monitoring\" cannot list resource \"secrets\" in API group \"\" in the namespace \"kube-system\"",
-    "reason": "Forbidden",
-    "details": {
-      "kind": "secrets"
-    },
-    "code": 403
-  },
-  "responseObject": {
-    "kind": "Status",
-    "apiVersion": "v1",
-    "metadata": {},
-    "status": "Failure",
-    "message": "secrets is forbidden: User \"system:serviceaccount:secure-ops:monitoring\" cannot list resource \"secrets\" in API group \"\" in the namespace \"kube-system\"",
-    "reason": "Forbidden",
-    "details": {
-      "kind": "secrets"
-    },
-    "code": 403
-  },
-  "requestReceivedTimestamp": "2025-12-13T11:27:36.930794Z",
-  "stageTimestamp": "2025-12-13T11:27:36.931294Z",
-  "annotations": {
-    "authorization.k8s.io/decision": "forbid",
-    "authorization.k8s.io/reason": ""
-  }
-}
-{
-  "kind": "Event",
-  "apiVersion": "audit.k8s.io/v1",
-  "level": "RequestResponse",
-  "auditID": "da2bea16-1fb9-47cd-a889-ea986653fb11",
-  "stage": "ResponseComplete",
-  "requestURI": "/api/v1/namespaces/secure-ops/pods?fieldManager=kubectl-client-side-apply&fieldValidation=Strict",
-  "verb": "create",
-  "user": {
-    "username": "minikube-user",
-    "groups": [
-      "system:masters",
-      "system:authenticated"
-    ],
-    "extra": {
-      "authentication.kubernetes.io/credential-id": [
-        "X509SHA256=608ebc64f580b213fea54740cf5733d8aeafe6feafd14e5ee8a6540c1cf2a581"
-      ]
-    }
-  },
-  "sourceIPs": [
-    "192.168.52.1"
-  ],
-  "userAgent": "kubectl.exe/v1.32.2 (windows/amd64) kubernetes/67a30c0",
-  "objectRef": {
-    "resource": "pods",
-    "namespace": "secure-ops",
-    "name": "privileged-pod",
-    "apiVersion": "v1"
-  },
-  "responseStatus": {
-    "metadata": {},
-    "code": 201
-  },
-  "requestObject": {
-    "kind": "Pod",
-    "apiVersion": "v1",
-    "metadata": {
-      "name": "privileged-pod",
-      "namespace": "secure-ops",
-      "annotations": {
-        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"privileged-pod\",\"namespace\":\"secure-ops\"},\"spec\":{\"containers\":[{\"command\":[\"sleep\",\"3600\"],\"image\":\"alpine\",\"name\":\"pwn\",\"securityContext\":{\"privileged\":true}}],\"restartPolicy\":\"Never\"}}\n"
+[
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "5c006700-3a17-43a8-8bb6-d198172ffa70",
+    "stage": "RequestReceived",
+    "requestURI": "/api/v1/namespaces/test-audit-final/secrets?fieldManager=kubectl-create&fieldValidation=Strict",
+    "verb": "create",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ],
+      "extra": {
+        "authentication.kubernetes.io/credential-id": [
+          "X509SHA256=c96a5453d7e6b3944e26c3f49da40c134c47b91d910fe23fb4adc40d45562aa8"
+        ]
       }
     },
-    "spec": {
-      "containers": [
-        {
-          "name": "pwn",
-          "image": "alpine",
-          "command": [
-            "sleep",
-            "3600"
-          ],
-          "resources": {},
-          "terminationMessagePath": "/dev/termination-log",
-          "terminationMessagePolicy": "File",
-          "imagePullPolicy": "Always",
-          "securityContext": {
-            "privileged": true
-          }
-        }
-      ],
-      "restartPolicy": "Never",
-      "terminationGracePeriodSeconds": 30,
-      "dnsPolicy": "ClusterFirst",
-      "securityContext": {},
-      "schedulerName": "default-scheduler",
-      "enableServiceLinks": true
+    "sourceIPs": [
+      "172.18.0.1"
+    ],
+    "userAgent": "kubectl/v1.24.3 (darwin/amd64) kubernetes/aef86a9",
+    "objectRef": {
+      "resource": "secrets",
+      "namespace": "test-audit-final",
+      "apiVersion": "v1"
     },
-    "status": {}
+    "requestReceivedTimestamp": "2025-12-13T16:13:36.572840Z",
+    "stageTimestamp": "2025-12-13T16:13:36.572840Z",
+    "_suspicious_reason": "Доступ к secrets"
   },
-  "responseObject": {
-    "kind": "Pod",
-    "apiVersion": "v1",
-    "metadata": {
-      "name": "privileged-pod",
-      "namespace": "secure-ops",
-      "uid": "59ddbf62-ac65-405b-8907-5e1ebd1dce7c",
-      "resourceVersion": "448",
-      "generation": 1,
-      "creationTimestamp": "2025-12-13T11:27:37Z",
-      "annotations": {
-        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"privileged-pod\",\"namespace\":\"secure-ops\"},\"spec\":{\"containers\":[{\"command\":[\"sleep\",\"3600\"],\"image\":\"alpine\",\"name\":\"pwn\",\"securityContext\":{\"privileged\":true}}],\"restartPolicy\":\"Never\"}}\n"
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "5c006700-3a17-43a8-8bb6-d198172ffa70",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/namespaces/test-audit-final/secrets?fieldManager=kubectl-create&fieldValidation=Strict",
+    "verb": "create",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ],
+      "extra": {
+        "authentication.kubernetes.io/credential-id": [
+          "X509SHA256=c96a5453d7e6b3944e26c3f49da40c134c47b91d910fe23fb4adc40d45562aa8"
+        ]
+      }
+    },
+    "sourceIPs": [
+      "172.18.0.1"
+    ],
+    "userAgent": "kubectl/v1.24.3 (darwin/amd64) kubernetes/aef86a9",
+    "objectRef": {
+      "resource": "secrets",
+      "namespace": "test-audit-final",
+      "name": "test-secret",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    },
+    "requestObject": {
+      "kind": "Secret",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "test-secret",
+        "namespace": "test-audit-final"
       },
-      "managedFields": [
-        {
-          "manager": "kubectl-client-side-apply",
-          "operation": "Update",
-          "apiVersion": "v1",
-          "time": "2025-12-13T11:27:37Z",
-          "fieldsType": "FieldsV1",
-          "fieldsV1": {
-            "f:metadata": {
-              "f:annotations": {
-                ".": {},
-                "f:kubectl.kubernetes.io/last-applied-configuration": {}
-              }
-            },
-            "f:spec": {
-              "f:containers": {
-                "k:{\"name\":\"pwn\"}": {
-                  ".": {},
-                  "f:command": {},
-                  "f:image": {},
-                  "f:imagePullPolicy": {},
-                  "f:name": {},
-                  "f:resources": {},
-                  "f:securityContext": {
-                    ".": {},
-                    "f:privileged": {}
-                  },
-                  "f:terminationMessagePath": {},
-                  "f:terminationMessagePolicy": {}
-                }
-              },
-              "f:dnsPolicy": {},
-              "f:enableServiceLinks": {},
-              "f:restartPolicy": {},
-              "f:schedulerName": {},
-              "f:securityContext": {},
-              "f:terminationGracePeriodSeconds": {}
-            }
-          }
-        }
-      ]
+      "data": {
+        "key": "dmFsdWU="
+      },
+      "type": "Opaque"
     },
-    "spec": {
-      "volumes": [
-        {
-          "name": "kube-api-access-xclv9",
-          "projected": {
-            "sources": [
-              {
-                "serviceAccountToken": {
-                  "expirationSeconds": 3607,
-                  "path": "token"
-                }
-              },
-              {
-                "configMap": {
-                  "name": "kube-root-ca.crt",
-                  "items": [
-                    {
-                      "key": "ca.crt",
-                      "path": "ca.crt"
-                    }
-                  ]
-                }
-              },
-              {
-                "downwardAPI": {
-                  "items": [
-                    {
-                      "path": "namespace",
-                      "fieldRef": {
-                        "apiVersion": "v1",
-                        "fieldPath": "metadata.namespace"
-                      }
-                    }
-                  ]
-                }
-              }
-            ],
-            "defaultMode": 420
-          }
-        }
-      ],
-      "containers": [
-        {
-          "name": "pwn",
-          "image": "alpine",
-          "command": [
-            "sleep",
-            "3600"
-          ],
-          "resources": {},
-          "volumeMounts": [
-            {
-              "name": "kube-api-access-xclv9",
-              "readOnly": true,
-              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
-            }
-          ],
-          "terminationMessagePath": "/dev/termination-log",
-          "terminationMessagePolicy": "File",
-          "imagePullPolicy": "Always",
-          "securityContext": {
-            "privileged": true
-          }
-        }
-      ],
-      "restartPolicy": "Never",
-      "terminationGracePeriodSeconds": 30,
-      "dnsPolicy": "ClusterFirst",
-      "serviceAccountName": "default",
-      "serviceAccount": "default",
-      "securityContext": {},
-      "schedulerName": "default-scheduler",
-      "tolerations": [
-        {
-          "key": "node.kubernetes.io/not-ready",
-          "operator": "Exists",
-          "effect": "NoExecute",
-          "tolerationSeconds": 300
-        },
-        {
-          "key": "node.kubernetes.io/unreachable",
-          "operator": "Exists",
-          "effect": "NoExecute",
-          "tolerationSeconds": 300
-        }
-      ],
-      "priority": 0,
-      "enableServiceLinks": true,
-      "preemptionPolicy": "PreemptLowerPriority"
+    "responseObject": {
+      "kind": "Secret",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "test-secret",
+        "namespace": "test-audit-final",
+        "uid": "dcefe998-62b3-49da-a872-c306a81bc2ed",
+        "resourceVersion": "2265",
+        "creationTimestamp": "2025-12-13T16:13:36Z"
+      },
+      "data": {
+        "key": "dmFsdWU="
+      },
+      "type": "Opaque"
     },
-    "status": {
-      "phase": "Pending",
-      "qosClass": "BestEffort"
-    }
+    "requestReceivedTimestamp": "2025-12-13T16:13:36.572840Z",
+    "stageTimestamp": "2025-12-13T16:13:36.579512Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    },
+    "_suspicious_reason": "Доступ к secrets"
   },
-  "requestReceivedTimestamp": "2025-12-13T11:27:37.247070Z",
-  "stageTimestamp": "2025-12-13T11:27:37.251872Z",
-  "annotations": {
-    "authorization.k8s.io/decision": "allow",
-    "authorization.k8s.io/reason": "",
-    "pod-security.kubernetes.io/enforce-policy": "privileged:latest"
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "1e9d9caf-ff9f-4c08-95c4-258837fc14f2",
+    "stage": "RequestReceived",
+    "requestURI": "/api/v1/namespaces/test-audit-final/secrets/test-secret",
+    "verb": "get",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ],
+      "extra": {
+        "authentication.kubernetes.io/credential-id": [
+          "X509SHA256=c96a5453d7e6b3944e26c3f49da40c134c47b91d910fe23fb4adc40d45562aa8"
+        ]
+      }
+    },
+    "sourceIPs": [
+      "172.18.0.1"
+    ],
+    "userAgent": "kubectl/v1.24.3 (darwin/amd64) kubernetes/aef86a9",
+    "objectRef": {
+      "resource": "secrets",
+      "namespace": "test-audit-final",
+      "name": "test-secret",
+      "apiVersion": "v1"
+    },
+    "requestReceivedTimestamp": "2025-12-13T16:13:36.700599Z",
+    "stageTimestamp": "2025-12-13T16:13:36.700599Z",
+    "_suspicious_reason": "Доступ к secrets"
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "1e9d9caf-ff9f-4c08-95c4-258837fc14f2",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/namespaces/test-audit-final/secrets/test-secret",
+    "verb": "get",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ],
+      "extra": {
+        "authentication.kubernetes.io/credential-id": [
+          "X509SHA256=c96a5453d7e6b3944e26c3f49da40c134c47b91d910fe23fb4adc40d45562aa8"
+        ]
+      }
+    },
+    "sourceIPs": [
+      "172.18.0.1"
+    ],
+    "userAgent": "kubectl/v1.24.3 (darwin/amd64) kubernetes/aef86a9",
+    "objectRef": {
+      "resource": "secrets",
+      "namespace": "test-audit-final",
+      "name": "test-secret",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    },
+    "responseObject": {
+      "kind": "Table",
+      "apiVersion": "meta.k8s.io/v1",
+      "metadata": {
+        "resourceVersion": "2265"
+      }
+    },
+    "requestReceivedTimestamp": "2025-12-13T16:13:36.700599Z",
+    "stageTimestamp": "2025-12-13T16:13:36.703840Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    },
+    "_suspicious_reason": "Доступ к secrets"
   }
-}
+]
