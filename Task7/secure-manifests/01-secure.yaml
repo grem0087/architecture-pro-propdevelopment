@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-privileged-pod
+  namespace: audit-zone
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop: ["ALL"]
