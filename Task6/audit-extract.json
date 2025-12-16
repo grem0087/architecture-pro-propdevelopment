@@ -1,0 +1,187 @@
+[
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "5c006700-3a17-43a8-8bb6-d198172ffa70",
+    "stage": "RequestReceived",
+    "requestURI": "/api/v1/namespaces/test-audit-final/secrets?fieldManager=kubectl-create&fieldValidation=Strict",
+    "verb": "create",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ],
+      "extra": {
+        "authentication.kubernetes.io/credential-id": [
+          "X509SHA256=c96a5453d7e6b3944e26c3f49da40c134c47b91d910fe23fb4adc40d45562aa8"
+        ]
+      }
+    },
+    "sourceIPs": [
+      "172.18.0.1"
+    ],
+    "userAgent": "kubectl/v1.24.3 (darwin/amd64) kubernetes/aef86a9",
+    "objectRef": {
+      "resource": "secrets",
+      "namespace": "test-audit-final",
+      "apiVersion": "v1"
+    },
+    "requestReceivedTimestamp": "2025-12-13T16:13:36.572840Z",
+    "stageTimestamp": "2025-12-13T16:13:36.572840Z",
+    "_suspicious_reason": "Доступ к secrets"
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "5c006700-3a17-43a8-8bb6-d198172ffa70",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/namespaces/test-audit-final/secrets?fieldManager=kubectl-create&fieldValidation=Strict",
+    "verb": "create",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ],
+      "extra": {
+        "authentication.kubernetes.io/credential-id": [
+          "X509SHA256=c96a5453d7e6b3944e26c3f49da40c134c47b91d910fe23fb4adc40d45562aa8"
+        ]
+      }
+    },
+    "sourceIPs": [
+      "172.18.0.1"
+    ],
+    "userAgent": "kubectl/v1.24.3 (darwin/amd64) kubernetes/aef86a9",
+    "objectRef": {
+      "resource": "secrets",
+      "namespace": "test-audit-final",
+      "name": "test-secret",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    },
+    "requestObject": {
+      "kind": "Secret",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "test-secret",
+        "namespace": "test-audit-final"
+      },
+      "data": {
+        "key": "dmFsdWU="
+      },
+      "type": "Opaque"
+    },
+    "responseObject": {
+      "kind": "Secret",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "test-secret",
+        "namespace": "test-audit-final",
+        "uid": "dcefe998-62b3-49da-a872-c306a81bc2ed",
+        "resourceVersion": "2265",
+        "creationTimestamp": "2025-12-13T16:13:36Z"
+      },
+      "data": {
+        "key": "dmFsdWU="
+      },
+      "type": "Opaque"
+    },
+    "requestReceivedTimestamp": "2025-12-13T16:13:36.572840Z",
+    "stageTimestamp": "2025-12-13T16:13:36.579512Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    },
+    "_suspicious_reason": "Доступ к secrets"
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "1e9d9caf-ff9f-4c08-95c4-258837fc14f2",
+    "stage": "RequestReceived",
+    "requestURI": "/api/v1/namespaces/test-audit-final/secrets/test-secret",
+    "verb": "get",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ],
+      "extra": {
+        "authentication.kubernetes.io/credential-id": [
+          "X509SHA256=c96a5453d7e6b3944e26c3f49da40c134c47b91d910fe23fb4adc40d45562aa8"
+        ]
+      }
+    },
+    "sourceIPs": [
+      "172.18.0.1"
+    ],
+    "userAgent": "kubectl/v1.24.3 (darwin/amd64) kubernetes/aef86a9",
+    "objectRef": {
+      "resource": "secrets",
+      "namespace": "test-audit-final",
+      "name": "test-secret",
+      "apiVersion": "v1"
+    },
+    "requestReceivedTimestamp": "2025-12-13T16:13:36.700599Z",
+    "stageTimestamp": "2025-12-13T16:13:36.700599Z",
+    "_suspicious_reason": "Доступ к secrets"
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "1e9d9caf-ff9f-4c08-95c4-258837fc14f2",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/namespaces/test-audit-final/secrets/test-secret",
+    "verb": "get",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ],
+      "extra": {
+        "authentication.kubernetes.io/credential-id": [
+          "X509SHA256=c96a5453d7e6b3944e26c3f49da40c134c47b91d910fe23fb4adc40d45562aa8"
+        ]
+      }
+    },
+    "sourceIPs": [
+      "172.18.0.1"
+    ],
+    "userAgent": "kubectl/v1.24.3 (darwin/amd64) kubernetes/aef86a9",
+    "objectRef": {
+      "resource": "secrets",
+      "namespace": "test-audit-final",
+      "name": "test-secret",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    },
+    "responseObject": {
+      "kind": "Table",
+      "apiVersion": "meta.k8s.io/v1",
+      "metadata": {
+        "resourceVersion": "2265"
+      }
+    },
+    "requestReceivedTimestamp": "2025-12-13T16:13:36.700599Z",
+    "stageTimestamp": "2025-12-13T16:13:36.703840Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    },
+    "_suspicious_reason": "Доступ к secrets"
+  }
+]
